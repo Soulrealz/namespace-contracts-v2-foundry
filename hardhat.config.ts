@@ -5,6 +5,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-verify";
 import "@typechain/hardhat";
 import "solidity-coverage";
+import "@nomicfoundation/hardhat-foundry";
 
 require("dotenv").config();
 
@@ -25,29 +26,29 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    hardhat: {
-      chainId: 1337,
-      allowUnlimitedContractSize: true,
-      forking: {
-        url: "https://eth-sepolia.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
-      },
-    },
-    sepolia: {
-      url: "https://eth-sepolia.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
-      gasPrice: 60000000000,
-      gas: 30_000_000,
-      // blockGasLimit: 210000,
-      chainId: 11155111,
-      accounts: [process.env.ACCOUNT_KEY as string],
-    },
-    mainnet: {
-      url: "https://eth-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
-      // gasPrice: 31000000000,
-      gas: 21_000_000,
-      // blockGasLimit: 210000,
-      chainId: 1,
-      accounts: [process.env.ACCOUNT_KEY as string],
-    },
+    // hardhat: {
+    //   chainId: 1337,
+    //   allowUnlimitedContractSize: true,
+    //   forking: {
+    //     url: "https://eth-sepolia.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
+    //   },
+    // },
+    // sepolia: {
+    //   url: "https://eth-sepolia.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
+    //   gasPrice: 60000000000,
+    //   gas: 30_000_000,
+    //   // blockGasLimit: 210000,
+    //   chainId: 11155111,
+    //   accounts: [process.env.ACCOUNT_KEY as string],
+    // },
+    // mainnet: {
+    //   url: "https://eth-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY,
+    //   // gasPrice: 31000000000,
+    //   gas: 21_000_000,
+    //   // blockGasLimit: 210000,
+    //   chainId: 1,
+    //   accounts: [process.env.ACCOUNT_KEY as string],
+    // },
   },
   mocha: {
     timeout: 100000000,
